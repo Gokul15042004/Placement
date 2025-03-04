@@ -1,0 +1,62 @@
+class Shape {
+    public int Area;
+    int length = 13;
+    int breadth = 14;
+    int radius = 15;
+    public void display() {
+        System.out.println("Area: " + Area);
+    }
+}
+class Rectangle extends Shape {
+    public Rectangle(int length, int breadth) {
+        this.length = length;
+        this.breadth = breadth;
+    }
+    public int calculateArea() {
+        Area = length * breadth;
+        return Area;
+    }
+    public void show() {
+        System.out.println("Calculated Area: " + calculateArea());
+    }
+}
+class Triangle extends Shape{
+    public Triangle(int length, int breadth) {
+        super();
+        this.length=length;
+        this.breadth=breadth;
+    }
+    public int calculateArea(){
+        Area=(int)(0.5 * length * breadth);
+        return Area;
+    }
+    public void view(){
+        System.out.println("Calculated Area: " + calculateArea());
+    }
+}
+class Circle extends Shape{
+    public Circle(int radius){
+        super();
+        this.radius=radius;
+    }
+    public int calculateArea(){
+        Area = (int)(3.14 * radius * radius);
+        return Area;
+    }
+    public void see(){
+        System.out.println("Calculated Area: " + calculateArea());
+    }
+}
+public class Inherit {
+    public static void main(String[] args) {
+        Rectangle r = new Rectangle(13, 14);
+        r.display();
+        r.show();
+        Triangle t = new Triangle(13, 14);
+        t.display();
+        t.view();
+        Circle c = new Circle(15);
+        c.display();
+        c.see();
+    }
+}
