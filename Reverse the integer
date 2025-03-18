@@ -1,0 +1,12 @@
+import java.util.*;
+import java.util.Scanner;
+class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Enter the integer: ");
+        int a=sc.nextInt();
+        String binaryString =String.format("%32s",Integer.toBinaryString(a)).replace(' ', '0');
+        System.out.print(binaryString);
+        
+      }
+    }
