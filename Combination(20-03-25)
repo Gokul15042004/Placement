@@ -1,0 +1,25 @@
+class CombiSum {
+    public static void combiSum(int[]cand,int target) {
+        int[]com=new int[target];
+        com(cand,target,0,com,0);
+    }
+    public static void com(int[]cand,int target,int start,int[] com,int index) {
+        if (target==0) {
+            for (int i=0;i<index;i++) {
+                System.out.print(com[i]+ " ");
+            }
+            System.out.println();
+            return;
+        }
+        for (int i=start;i<cand.length;i++) {
+            if(cand[i]>target)continue;
+            com[index]=cand[i];
+            com(cand,target-cand[i],i,com,index + 1); 
+        }
+    }
+    public static void main(String[] args) {
+        int[] cand={2,3,6,7};
+        int target=8;
+        combiSum(cand,target);
+    }
+}
